@@ -1,0 +1,24 @@
+{
+  "name": "@jlrwi/requestor-factories",
+  "version": "1.0.0",
+  "description": "Curried Pronto-style requestor factories",
+  "license": "ISC",
+  "author": "Jonathan Reimer",
+  "homepage": "https://github.com/jlrwi/requestor-factories",
+  "repository": "github:jlrwi/requestor-factories",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "extract-test ./src/requestor_factories.js ./test/requestor_factories_test.js",
+    "test": "node ./test/requestor_factories_test.js",
+    "stage": "extract-doc ./src/requestor_factories.js README.md & extract-min ./src/requestor_factories.js index.js"
+  },
+  "dependencies": {
+    "@jlrwi/combinators": "github:jlrwi/combinators",
+    "@jlrwi/esfunctions": "github:jlrwi/esfunctions",
+    "@jlrwi/functional-timers": "github:jlrwi/functional-timers"
+  },
+  "devDependencies": {
+    "@jlrwi/jscheck": "github:jlrwi/jscheck"
+  }
+}
