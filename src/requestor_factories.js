@@ -945,7 +945,7 @@ const indexed_requestor = function (options = {}) {
 //test                 );
 //test             };
 //test
-//test             indexed()(
+//test             indexed_requestor()(
 //test                 array_map(
 //test                     function (value_pair) {
 //test                         return test_requestors.random_delay({
@@ -1063,7 +1063,7 @@ const record_requestor = function (options = {}) {
 //test                 );
 //test             };
 //test
-//test             record()(
+//test             record_requestor()(
 //test                 object_map(
 //test                     function (val_pair) {
 //test                         return test_requestors.random_delay({
@@ -1492,7 +1492,7 @@ const repeat_requestor = function ({continuer, aggregator}) {
                     if (continuer(result)) {
                         callback(result);
                     } else {
-                        cancel_function = repeat(
+                        cancel_function = repeat_requestor(
                             {continuer, aggregator}
                         )(
                             requestor
@@ -1528,7 +1528,7 @@ const repeat_requestor = function ({continuer, aggregator}) {
 //test                 );
 //test             };
 //test
-//test             repeat({
+//test             repeat_requestor({
 //test                 continuer: gt(max_value),
 //test                 aggregator: add
 //test             })(

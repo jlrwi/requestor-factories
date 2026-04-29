@@ -410,7 +410,7 @@ const repeat_requestor = function ({continuer, aggregator}) {
                     if (continuer(result)) {
                         callback(result);
                     } else {
-                        cancel_function = repeat(
+                        cancel_function = repeat_requestor(
                             {continuer, aggregator}
                         )(
                             requestor
