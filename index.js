@@ -230,7 +230,7 @@ const race_object = function (options = {}) {
     };
 };
 
-const indexed = function (options = {}) {
+const indexed_requestor = function (options = {}) {
     return function (requestors) {
 
         if (!Array.isArray(requestors)) {
@@ -264,7 +264,7 @@ const indexed = function (options = {}) {
     };
 };
 
-const record = function (options = {}) {
+const record_requestor = function (options = {}) {
     return function (requestors) {
 
         if (!is_object(requestors)) {
@@ -367,7 +367,7 @@ const parallel_applied_object = function (options = {}) {
 
 const race_applied = applied_requestor(race);
 
-const repeat = function ({continuer, aggregator}) {
+const repeat_requestor = function ({continuer, aggregator}) {
 
     if (continuer === undefined) {
         throw "Continuer function missing";
@@ -590,7 +590,7 @@ const functional_callback = function (on_fail) {
 export {
     fallback,
     fallback_applied,
-    indexed,
+    indexed_requestor,
     parallel,
     parallel_applied,
     parallel_applied_object,
@@ -598,8 +598,8 @@ export {
     race,
     race_applied,
     race_object,
-    record,
-    repeat,
+    record_requestor,
+    repeat_requestor,
     sequence,
     time_limit_requestor,
     conditional_requestor,

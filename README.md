@@ -128,7 +128,7 @@ Each of these processors corresponds to an original variant, except that instead
    
 ## Other Processors   
 ### Repeat processor   
-    repeat({   
+    repeat_requestor({   
         continuer,   
         aggregator   
     })(   

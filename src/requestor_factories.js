@@ -889,7 +889,7 @@ const race_object = function (options = {}) {
 //MD the same index in the input array, running all the requestors in
 //MD parallel./p
 
-const indexed = function (options = {}) {
+const indexed_requestor = function (options = {}) {
     return function (requestors) {
 
         if (!Array.isArray(requestors)) {
@@ -1000,7 +1000,7 @@ const indexed = function (options = {}) {
 //MD property value from the input object, running all the requestors in
 //MD parallel./p
 
-const record = function (options = {}) {
+const record_requestor = function (options = {}) {
     return function (requestors) {
 
         if (!is_object(requestors)) {
@@ -1437,7 +1437,7 @@ const race_applied = applied_requestor(race);
 //MD ## Other Processors/p
 
 //MD ### Repeat processor/p
-//MD     repeat({/p
+//MD     repeat_requestor({/p
 //MD         continuer,/p
 //MD         aggregator/p
 //MD     })(/p
@@ -1449,7 +1449,7 @@ const race_applied = applied_requestor(race);
 //MD similar to a reducer function. Repetition continues until the aggregate
 //MD value satisfies a unary continuer function./p
 
-const repeat = function ({continuer, aggregator}) {
+const repeat_requestor = function ({continuer, aggregator}) {
 
     if (continuer === undefined) {
         throw "Continuer function missing";
@@ -2085,7 +2085,7 @@ const functional_callback = function (on_fail) {
 export {
     fallback,
     fallback_applied,
-    indexed,
+    indexed_requestor,
     parallel,
     parallel_applied,
     parallel_applied_object,
@@ -2093,8 +2093,8 @@ export {
     race,
     race_applied,
     race_object,
-    record,
-    repeat,
+    record_requestor,
+    repeat_requestor,
     sequence,
     time_limit_requestor,
     conditional_requestor,
