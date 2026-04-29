@@ -2082,7 +2082,7 @@ const functional_callback = function (on_fail) {
 //test     nr_trials: 20
 //test });
 
-export default Object.freeze({
+export {
     fallback,
     fallback_applied,
     indexed,
@@ -2103,4 +2103,4 @@ export default Object.freeze({
     unary_requestor,
     wait_requestor,
     functional_callback
-});
+};

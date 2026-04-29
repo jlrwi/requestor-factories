@@ -587,7 +587,7 @@ const functional_callback = function (on_fail) {
     };
 };
 
-export default Object.freeze({
+export {
     fallback,
     fallback_applied,
     indexed,
@@ -608,4 +608,4 @@ export default Object.freeze({
     unary_requestor,
     wait_requestor,
     functional_callback
-});
+};
